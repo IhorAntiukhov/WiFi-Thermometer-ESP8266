@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/buttonMainScreen"
+        android:icon="@drawable/main_screen_icon"
+        android:title="Главная"
+        app:showAsAction="always"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/buttonNotifications"
+        android:icon="@drawable/menu_notification_icon"
+        android:title="Уведомления"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/buttonSettings"
+        android:icon="@drawable/menu_settings_icon"
+        android:title="Настройки"
+        app:showAsAction="always"
+        tools:ignore="HardcodedText" />
+</menu>

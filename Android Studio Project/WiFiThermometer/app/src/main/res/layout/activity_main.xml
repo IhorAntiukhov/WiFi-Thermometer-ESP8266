@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.WiFiThermometer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        tools:ignore="UselessParent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <ProgressBar
+                android:id="@+id/progressBarTemperature"
+                style="@style/TemperatureProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:indeterminate="false"
+                android:max="65"
+                android:progress="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/labelTemperature"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:autoSizeMaxTextSize="75sp"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:text="0°C"
+                android:textColor="#0388FC"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarTemperature"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarTemperature"
+                app:layout_constraintStart_toStartOf="@+id/progressBarTemperature"
+                app:layout_constraintTop_toTopOf="@+id/progressBarTemperature"
+                tools:ignore="HardcodedText"
+                tools:targetApi="o" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <ProgressBar
+                android:id="@+id/progressBarHumidity"
+                style="@style/HumidityProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:indeterminate="false"
+                android:max="90"
+                android:progress="0"
+                tools:layout_editor_absoluteX="137dp" />
+
+            <TextView
+                android:id="@+id/labelHumidity"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:autoSizeMaxTextSize="75sp"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:text="0%"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarHumidity"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarHumidity"
+                app:layout_constraintStart_toStartOf="@+id/progressBarHumidity"
+                app:layout_constraintTop_toTopOf="@+id/progressBarHumidity"
+                tools:ignore="HardcodedText"
+                tools:targetApi="o" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineGraph"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp" />
+
+</LinearLayout>
